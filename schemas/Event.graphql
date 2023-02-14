@@ -1,4 +1,4 @@
 
-type Event @createModel(accountRelation: LIST, description: "Upcoming event"){
+type Event @createModel(accountRelation: LIST, description: "An event"){
     eventName: String! @string(maxLength: 100)
 }
