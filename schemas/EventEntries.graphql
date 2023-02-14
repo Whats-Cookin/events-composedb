@@ -1,0 +1,13 @@
+type Event @loadModel(id: "kjzl6hvfrbw6c7a6gmakc57y647kmdn73np1jlhoafgf7lfb8z4l3qm8236vntn"){
+    id: ID!
+}
+
+type EventEntry @createModel(accountRelation: LIST, description: "Upcoming Event"){
+    event: StreamID! @documentReference(model: "Event")
+    eventcard: Event! @relationDocument(property: "event")
+    title: String! @string(maxLength: 100)
+    description: String @string(maxLength: 500)
+    location: String! @string(maxLength: 200)
+    startDateTime: DateTime! @specifiedBy
+    endDateTime: DateTime! @specifiedBy
+}
